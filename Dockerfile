@@ -7,9 +7,9 @@ COPY go.sum ./
 RUN go mod download
 
 COPY *.go ./
-COPY /appDataH1 ./appData
+COPY /appData ./appData
 COPY /models ./models
 
-RUN go build -o /hall_app
+RUN go build -o /food_ordering_app
 
-CMD [ "/hall_app" ]
+CMD [ "/food_ordering_app" ]
