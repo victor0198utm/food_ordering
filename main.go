@@ -100,7 +100,7 @@ func clientOrder(w http.ResponseWriter, r *http.Request) {
 			log.Fatal(err_marshall)
 		}
 
-		resp, err := http.Post("http://localhost:8031/v2/order", "application/json",
+		resp, err := http.Post("http://"+restaurants[orderReqCopy.Restaurant_id-1].Address+"/v2/order", "application/json",
 			bytes.NewBuffer(json_data))
 		if err != nil {
 			log.Fatal(err)
